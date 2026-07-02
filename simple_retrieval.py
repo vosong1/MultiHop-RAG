@@ -66,10 +66,11 @@ if __name__ == '__main__':
     llm = OpenAI(model=args.llm, temperature=0, max_tokens=args.context_window)
 
     # define save file
+    safe_model_name = model_name.replace('\\', '/').split('/')[-1]
     if rerank:
-        save_file = f'output/{save_model_name[-1]}_rerank_retrieval_test.json'
+        save_file = f'output/{safe_model_name}_rerank_retrieval_test.json'
     else:
-        save_file = f'output/{save_model_name[-1]}_retrieval_test.json'
+        save_file = f'output/{safe_model_name}_retrieval_test.json'
     rm_file(save_file)
     print(f'save_file:{save_file}')
 

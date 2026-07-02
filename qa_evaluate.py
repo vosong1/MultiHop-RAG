@@ -4,7 +4,7 @@ import re
 from collections import Counter
 
 # Read files
-with open('qa_output/llama.json', 'r') as file:
+with open('qa_output/gemini.json', 'r') as file:
     doc_data = json.load(file)
 
 with open('dataset/MultiHopRAG.json', 'r') as file:
